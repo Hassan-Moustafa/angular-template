@@ -19,7 +19,7 @@ export class LoadComponentDynamicDirective implements OnInit{
     const componentRef = this.viewContainerRef.createComponent(componentFactory);
     if (this.column.props) {
       this.column.props.forEach(prop => {
-        (componentRef.instance as any)[prop.propName] = this.item[prop.propValue];
+        (componentRef.instance as any)[prop.propName] = prop.propValue ? this.item[prop.propValue] : prop.default;
       });
     }
     if (this.column.events) {

@@ -8,14 +8,16 @@ import { CheckboxComponent } from 'src/app/shared/components/UI/checkbox/checkbo
 import { ProductsListComponent } from './pages/products/products-list/products-list.component';
 import { ProductFormComponent } from './pages/products/product-form/product-form.component';
 import { ProductControllerComponent } from './pages/products/product-controller/product-controller.component';
+import { NameColumnComponent } from './pages/products/products-list/name-column/name-column.component';
 
 
 @NgModule({
-  declarations: [HomeControllerComponent, BotsListComponent, ProductsListComponent, ProductFormComponent, ProductControllerComponent],
+  declarations: [HomeControllerComponent, BotsListComponent, ProductsListComponent, ProductFormComponent, ProductControllerComponent, NameColumnComponent],
   imports: [
     SharedModule,
     HomeRoutingModule
   ],
+  entryComponents: [NameColumnComponent],
   exports: [SharedModule],
 })
 export class HomeModule { }

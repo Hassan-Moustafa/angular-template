@@ -42,15 +42,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { CheckboxComponent } from './components/UI/checkbox/checkbox.component';
 import { LoadComponentDynamicDirective } from './directives/load-component-dynamic.directive';
 import { DataTableComponent } from './components/UI/data-table/data-table.component';
 import { TextComponent } from './components/UI/text/text.component';
 import { ModalComponent } from './components/UI/modal/modal.component';
+import { SvgIconComponent } from './components/UI/Icon/icon.component';
 
 
 @NgModule({
-  declarations: [CheckboxComponent , LoadComponentDynamicDirective, DataTableComponent, TextComponent, ModalComponent],
+  declarations: [CheckboxComponent , LoadComponentDynamicDirective, DataTableComponent, TextComponent, ModalComponent, SvgIconComponent],
   imports: [
     CommonModule,
     A11yModule,
@@ -96,8 +98,9 @@ import { ModalComponent } from './components/UI/modal/modal.component';
     PortalModule,
     ScrollingModule,
     ReactiveFormsModule,
+    FormsModule
   ],
-  entryComponents: [CheckboxComponent, TextComponent],
+  entryComponents: [CheckboxComponent, TextComponent, SvgIconComponent],
   exports: [
     CommonModule,
     A11yModule,
@@ -143,10 +146,12 @@ import { ModalComponent } from './components/UI/modal/modal.component';
     PortalModule,
     ScrollingModule,
     ReactiveFormsModule,
+    FormsModule,
     // CheckboxComponent,
     LoadComponentDynamicDirective,
     DataTableComponent,
-    ModalComponent
+    ModalComponent,
+    SvgIconComponent
   ],
 })
 export class SharedModule { }

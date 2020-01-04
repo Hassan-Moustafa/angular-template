@@ -6,16 +6,16 @@ export class PaginatorSettings {
             public pageIndex: number) {}
 
     setPaginatorSettings(length? :number, pageSize?: number, pageSizeOptions?: number[], pageIndex?: number) {
-        if(length) {
+        if(length !== null && length !== undefined) {
             this.length = length;
         }
-        if(pageSize) {
+        if(pageSize !== null && pageSize !== undefined) {
             this.pageSize = pageSize
         }
-        if(pageSizeOptions) {
+        if(pageSizeOptions !== null && pageSizeOptions !== undefined) {
             this.pageSizeOptions = pageSizeOptions;
         }
-        if(pageIndex) {
+        if(pageIndex !== null && pageIndex !== undefined) {
             this.pageIndex = pageIndex;
         }
     }

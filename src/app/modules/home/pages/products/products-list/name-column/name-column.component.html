@@ -1,0 +1,11 @@
+<div class="col-12 px-0">
+    <div class="col-12 px-0" >
+        <p class="my-0" (click)="toggleMode()" *ngIf="!isEditMode">{{value}}</p>
+        <input 
+            *ngIf="isEditMode" 
+            type="text" 
+            [(ngModel)]="value" 
+            (blur)="saveValue()" 
+            #nameField>
+    </div>
+</div>

@@ -30,3 +30,9 @@ $rms-theme: mat-light-theme($rms-primary, $rms-accent, $rms-warn);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.products-list-container{
+    .trash-icon{
+        cursor: pointer;
+    }
+}

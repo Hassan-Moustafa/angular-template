@@ -35,7 +35,11 @@ export class ProductService {
    */
   public getPaginatedData(pageNumber: number, pageSize: number) {
     let filteredData = [];
+
     let startIndex: number = ( ( pageNumber - 1 ) * pageSize );
+    // startIndex = startIndex >= this.productsData.length ? 
+    //             ( ( pageNumber - 2 ) * pageSize ) : startIndex;
+
     let endIndex = startIndex + pageSize;
     endIndex = endIndex > this.productsData.length ? 
                this.productsData.length : endIndex;
@@ -61,8 +65,19 @@ export class ProductService {
   }
 
   public removeProduct(id) {
-    this.productsData = this.productsData.filter((item) => item.id !== id);
+    this.productsData = this.productsData.filter((item) => item._id !== id);
     this.dataChanged.next();
+  }
+
+  public updateProduct(productData) {
+    let index = this.productsData.findIndex((item) => item._id === productData._id);
+    if(index !== -1) {
+      this.productsData[index] = {
+        ... this.productsData[index],
+        ... productData
+      }
+      this.dataChanged.next();
+    }
   }
 
 }
