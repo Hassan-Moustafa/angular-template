@@ -1,4 +1,7 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 col-12 px-0">
+<div class="mat-elevation-z8">
+
+
+  <table mat-table [dataSource]="dataSource" class="col-12 px-0">
 
 
     <ng-container [matColumnDef]="column.prop" *ngFor="let column of columns">
@@ -17,4 +20,12 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+  </table>
+  <mat-paginator
+                *ngIf="showPaginator" 
+                [length]="paginatorSettings.length"
+                [pageSize]="paginatorSettings.pageSize"
+                [pageSizeOptions]="paginatorSettings.pageSizeOptions"
+                (page)="onPaginatorChangedHandler($event)">
+  </mat-paginator>
+</div>

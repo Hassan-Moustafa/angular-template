@@ -1,0 +1,6 @@
+<app-data-table 
+    [dataSource]="productsData" 
+    [columns]="columns"
+    [showPaginator]="true"
+    [paginatorSettings]="paginatorSettings"
+    (onPaginatorChanged)="loadPaginatedData($event)"></app-data-table>

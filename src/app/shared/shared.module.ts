@@ -48,7 +48,6 @@ import { DataTableComponent } from './components/UI/data-table/data-table.compon
 import { TextComponent } from './components/UI/text/text.component';
 
 
-
 @NgModule({
   declarations: [CheckboxComponent , LoadComponentDynamicDirective, DataTableComponent, TextComponent],
   imports: [
