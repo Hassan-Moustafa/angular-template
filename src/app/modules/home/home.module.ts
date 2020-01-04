@@ -9,10 +9,13 @@ import { ProductsListComponent } from './pages/products/products-list/products-l
 import { ProductFormComponent } from './pages/products/product-form/product-form.component';
 import { ProductControllerComponent } from './pages/products/product-controller/product-controller.component';
 import { NameColumnComponent } from './pages/products/products-list/name-column/name-column.component';
+import { ConfigurationsControllerComponent } from './pages/configurations/configurations-controller/configurations-controller.component';
+import { ConfigurationsListComponent } from './pages/configurations/configurations-list/configurations-list.component';
+import { ConfigurationsFormComponent } from './pages/configurations/configurations-form/configurations-form.component';
 
 
 @NgModule({
-  declarations: [HomeControllerComponent, BotsListComponent, ProductsListComponent, ProductFormComponent, ProductControllerComponent, NameColumnComponent],
+  declarations: [HomeControllerComponent, BotsListComponent, ProductsListComponent, ProductFormComponent, ProductControllerComponent, NameColumnComponent, ConfigurationsControllerComponent, ConfigurationsListComponent, ConfigurationsFormComponent],
   imports: [
     SharedModule,
     HomeRoutingModule

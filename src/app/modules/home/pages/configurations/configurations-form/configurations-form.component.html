@@ -1,0 +1,25 @@
+<div class="col-12 mx-auto product-form-container row">
+    <form class="col-12 px-0" (ngSubmit)="onSubmit()" [formGroup]="productForm">
+        <div class="col-12 form-header">
+                <p>{{'Add a new configuration'}}</p>
+        </div>
+
+        <div class="col-12">
+            <mat-form-field class="example-full-width col-12 col-md-8 px-0">
+                <input matInput [formControlName]="'key'" type="text" id="key" placeholder="Configuration key">
+                <mat-error *ngIf="productForm.get('key').invalid && productForm.get('key').dirty" class="help-block">{{getValidationMessage('key', 'Configuration key')}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12">
+            <mat-form-field class="example-full-width col-12 col-md-8 px-0">
+                <input matInput [formControlName]="'value'" type="text" id="value" placeholder="Configuration value">
+                <mat-error *ngIf="productForm.get('value').invalid && productForm.get('value').dirty" class="help-block">{{getValidationMessage('value', 'Configuration value')}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group col-12 mt-3">
+            <button mat-button class="save-btn" [disabled]="productForm.invalid" type="submit">Save</button>
+        </div>
+    </form>
+</div>

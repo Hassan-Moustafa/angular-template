@@ -1,0 +1,8 @@
+<div class="col-12 px-0 configurations-list-container">
+    <app-data-table 
+        [dataSource]="configurationsData" 
+        [columns]="columns"
+        [showPaginator]="true"
+        [paginatorSettings]="paginatorSettings"
+        (onPaginatorChanged)="loadPaginatedData($event)"></app-data-table>
+</div>
