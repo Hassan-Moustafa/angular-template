@@ -24,7 +24,10 @@ export class LoadComponentDynamicDirective implements OnInit{
     }
     if (this.column.events) {
       this.column.events.forEach(event => {
-        (componentRef.instance as any)[event.eventName].subscribe((e) => event.eventHandler(e));
+        (componentRef.instance as any)[event.eventName].subscribe((e) => event.eventHandler({
+          event: e,
+          item: this.item
+        }));
       });
     }
   }

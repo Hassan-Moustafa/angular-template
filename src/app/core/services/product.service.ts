@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
+import guid from 'angular-uid';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,28 +21,7 @@ export class ProductService {
     {_id: 10, name: 'Neon'}
   ];
 
-  private columns: any[] = [
-    {
-      prop: '_id',
-      displayText: 'Id',
-    },
-    {
-      prop: 'name',
-      displayText: 'Name'
-    }
-  ];
-
   private dataChanged = new Subject();
-
-  /**
-   * getDataTable
-   */
-  public getDataTable(): IDataTable {
-    return {
-      data: this.productsData,
-      columns: this.columns
-    }
-  }
 
   /**
    * getAllDataLength
@@ -72,16 +53,16 @@ export class ProductService {
   }
 
   public addNewProduct(newProduct) {
-    this.productsData.push(newProduct)
+    this.productsData.push({
+      _id: guid(),
+      ... newProduct
+    });
+    this.dataChanged.next();
   }
 
   public removeProduct(id) {
     this.productsData = this.productsData.filter((item) => item.id !== id);
+    this.dataChanged.next();
   }
 
-}
-
-interface IDataTable {
-  data: any[];
-  columns: any[];
 }

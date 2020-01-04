@@ -46,10 +46,11 @@ import { CheckboxComponent } from './components/UI/checkbox/checkbox.component';
 import { LoadComponentDynamicDirective } from './directives/load-component-dynamic.directive';
 import { DataTableComponent } from './components/UI/data-table/data-table.component';
 import { TextComponent } from './components/UI/text/text.component';
+import { ModalComponent } from './components/UI/modal/modal.component';
 
 
 @NgModule({
-  declarations: [CheckboxComponent , LoadComponentDynamicDirective, DataTableComponent, TextComponent],
+  declarations: [CheckboxComponent , LoadComponentDynamicDirective, DataTableComponent, TextComponent, ModalComponent],
   imports: [
     CommonModule,
     A11yModule,
@@ -144,7 +145,8 @@ import { TextComponent } from './components/UI/text/text.component';
     ReactiveFormsModule,
     // CheckboxComponent,
     LoadComponentDynamicDirective,
-    DataTableComponent
+    DataTableComponent,
+    ModalComponent
   ],
 })
 export class SharedModule { }

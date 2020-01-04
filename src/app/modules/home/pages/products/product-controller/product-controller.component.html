@@ -1,0 +1,11 @@
+<div class="col-12 px-0">
+    <div class="col-12 mb-5">
+        <app-modal *ngIf = "isProductFormVisible" (onModalClose)="closeProductForm()">
+                <app-product-form (dataSaved)="closeProductForm()"></app-product-form>
+        </app-modal>
+        <div class="col-auto">
+            <button mat-button class="add-new-item-btn" (click)="openProductForm()">Add new product</button>
+        </div>
+    </div>
+    <app-products-list></app-products-list>
+</div>
